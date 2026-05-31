@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <!-- Видеопоток с фронтальной камеры -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Красный мигающий оверлей при обнаружении засыпания -->
+    <View
+        android:id="@+id/alertOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/alert_red"
+        android:visibility="gone" />
+
+    <!-- Панель статуса (снизу) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#CC000000"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Цветная полоса: зелёная/оранжевая/красная/серая -->
+        <View
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/status_unknown" />
+
+        <!-- Текущее состояние глаз -->
+        <TextView
+            android:id="@+id/tvEyeState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/initializing"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Счётчик времени закрытия глаз -->
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF9800"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- EAR — метрика Eye Aspect Ratio -->
+        <TextView
+            android:id="@+id/tvEarValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="EAR: —"
+            android:textColor="#CCFFFFFF"
+            android:textSize="13sp" />
+
+        <!-- Вероятности открытия глаз (ML Kit) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvProbLeft"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#AAFFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvProbRight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#AAFFFFFF"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Предупреждение об засыпании (по центру экрана) -->
+    <TextView
+        android:id="@+id/tvAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="16dp"
+        android:shadowColor="#AA000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/drowsiness_warning"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</FrameLayout>

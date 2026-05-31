@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Цвета полосы статуса -->
+    <color name="status_open">#4CAF50</color>
+    <color name="status_half">#FF9800</color>
+    <color name="status_closed">#F44336</color>
+    <color name="status_unknown">#9E9E9E</color>
+
+    <!-- Цвет мигающего оверлея тревоги -->
+    <color name="alert_red">#F44336</color>
+</resources>

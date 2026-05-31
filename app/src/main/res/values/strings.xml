@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">EyeStateDetector</string>
+
+    <!-- UI -->
+    <string name="initializing">Инициализация…</string>
+    <string name="face_not_detected">Лицо не обнаружено</string>
+    <string name="eyes_open">Глаза открыты</string>
+    <string name="eyes_half_closed">Глаза полузакрыты</string>
+    <string name="eyes_closed">Глаза закрыты!</string>
+
+    <!-- Форматированные строки -->
+    <string name="eye_left">Лев.: %d%%</string>
+    <string name="eye_right">Пр.: %d%%</string>
+    <string name="closed_timer">Закрыты: %.1f с</string>
+
+    <!-- Тревожные сообщения -->
+    <string name="drowsiness_toast">Человек заснул</string>
+    <string name="drowsiness_warning">Человек заснул</string>
+
+    <!-- Ошибки -->
+    <string name="camera_permission_denied">Необходимо разрешение на использование камеры</string>
+    <string name="camera_error">Ошибка инициализации камеры</string>
+</resources>
