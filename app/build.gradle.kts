@@ -4,16 +4,12 @@ plugins {
 
 android {
     namespace = "ru.kazhenets.eyestatedetector"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ru.kazhenets.eyestatedetector"
-        minSdk = 36
-        targetSdk = 36
+        minSdk = 26
+        targetSdk = 30
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
